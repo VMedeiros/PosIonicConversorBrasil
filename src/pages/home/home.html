@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar transparent>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title class="branco">Conversor Brasil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div *ngIf="auth.autenticado">
+    <p align="center">Bem Vindo <b class="cor">{{auth.nomeUsuario}}</b></p>
+
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Valor R$</ion-label>
+        <ion-input type="text" [(ngModel)]="valorEmReais"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button full (click)="converter()">Converter</button>
+      </ion-item>
+    </ion-list>
+
+    <ion-item-group>
+      <ion-item-divider color="light">Eua</ion-item-divider>
+      <ion-item>Dólares: {{valorEmDolares | currency:'USD':true}}</ion-item>
+      <ion-item-divider color="light">União Europeia</ion-item-divider>
+      <ion-item>Euros: {{valorEmEuros | currency:'EUR':true}}</ion-item>
+      <ion-item-divider color="light">Reino Unido</ion-item-divider>
+      <ion-item>Libras: {{valorEmLibras | currency:'GBP':true}}</ion-item>
+    </ion-item-group>
+
+  </div>
+
+  </ion-content>
