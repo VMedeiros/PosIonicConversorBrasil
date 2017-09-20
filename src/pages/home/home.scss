@@ -1,10 +1,23 @@
 page-home {
-
-.cor{
-    color: #1d5bc7;
-}
-
-agm-map{
-  height: 300px;
-}
+    .userIcon {
+        margin-left: 25%;
+        width: 50%;
+    }
+    p {
+        font-size: large;
+        color: #36807a;
+    }
+    b {
+        color: #36807a;
+    }
+    .cor {
+        color: #36807a;
+    }
+    .button {
+        background-color: #36807a;
+        color: #ffffff;
+    }
+    .grupo {
+        background-color: #ffffff;
+    }
 }

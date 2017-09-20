@@ -1,36 +1,57 @@
 <ion-header>
-  <ion-toolbar transparent>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+    <ion-toolbar transparent>
+        <button ion-button menuToggle>
+      <ion-icon name="menu" class="menuIcon"></ion-icon>
     </button>
-    <ion-title class="branco">Conversor Brasil</ion-title>
-  </ion-toolbar>
+        <ion-title>Conversor Brasil</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="app">
 
-  <div *ngIf="auth.autenticado">
-    <p align="center">Bem Vindo <b class="cor">{{auth.nomeUsuario}}</b></p>
+    <div *ngIf="auth.autenticado">
+        <ion-card>
+            <ion-card-content>
+                <img src="assets/img/user.png" class="userIcon"><br>
+                <p align="center">Bem Vindo <b class="cor">{{auth.nomeUsuario}}</b></p>
+            </ion-card-content>
+        </ion-card>
 
-    <ion-list>
-      <ion-item>
-        <ion-label floating>Valor R$</ion-label>
-        <ion-input type="text" [(ngModel)]="valorEmReais"></ion-input>
-      </ion-item>
-      <ion-item>
-        <button ion-button full (click)="converter()">Converter</button>
-      </ion-item>
-    </ion-list>
+        <ion-list>
+            <ion-card>
+                <p align="center">Digite o valor para <b>conversão</b></p>
+                <ion-item class="labelText">
+                    <ion-label floating><b>Valor R$</b></ion-label>
+                    <ion-input type="number" [(ngModel)]="valorEmReais"></ion-input>
+                </ion-item>
+            </ion-card>
 
-    <ion-item-group>
-      <ion-item-divider color="light">Eua</ion-item-divider>
-      <ion-item>Dólares: {{valorEmDolares | currency:'USD':true}}</ion-item>
-      <ion-item-divider color="light">União Europeia</ion-item-divider>
-      <ion-item>Euros: {{valorEmEuros | currency:'EUR':true}}</ion-item>
-      <ion-item-divider color="light">Reino Unido</ion-item-divider>
-      <ion-item>Libras: {{valorEmLibras | currency:'GBP':true}}</ion-item>
-    </ion-item-group>
+            <ion-row>
+                <ion-col>
+                    <button ion-button block round clear class="button" (click)="converter()">Converter</button>
+                </ion-col>
+            </ion-row>
 
-  </div>
+        </ion-list>
 
-  </ion-content>
+        <ion-card>
+            <ion-item-group>
+
+                <ion-item-divider class="grupo"><b>Eua</b>
+                    <ion-item>Dólares: <b>{{valorEmDolares | currency:'USD':true}}</b></ion-item>
+                </ion-item-divider>
+
+                <ion-item-divider class="grupo"><b>União Europeia</b>
+                    <ion-item>Euros: <b>{{valorEmEuros | currency:'EUR':true}}</b></ion-item>
+                </ion-item-divider>
+
+                <ion-item-divider class="grupo"><b>Reino Unido</b>
+                    <ion-item>Libras: <b>{{valorEmLibras | currency:'GBP':true}}</b></ion-item>
+                </ion-item-divider>
+
+            </ion-item-group>
+        </ion-card>
+
+    </div>
+
+</ion-content>

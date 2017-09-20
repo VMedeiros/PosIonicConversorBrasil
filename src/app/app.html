@@ -1,1 +1,37 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu id="myMenu" [content]="content" side="left">
+    <ion-header transparent>
+        <ion-toolbar transparent>
+            <ion-title align="center">Menu</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-item-group>
+            <ion-list>
+                <ion-item-divider class="listaMenu" align="center">Conversor Brasil</ion-item-divider>
+                <ion-item menuClose="myMenu" (click)="homePage()">
+                    <ion-icon class="icone" name="briefcase" item-start></ion-icon>Page1
+                </ion-item>
+
+                <ion-item-divider class="listaMenu" align="center">Conversor Brasil</ion-item-divider>
+                <ion-item menuClose="myMenu" (click)="homePage()">
+                    <ion-icon class="icone" name="briefcase" item-start></ion-icon>Page2
+                </ion-item>
+
+                <ion-item-divider class="listaMenu" align="center">Conversor Brasil</ion-item-divider>
+                <ion-item menuClose="myMenu" (click)="homePage()">
+                    <ion-icon class="icone" name="briefcase" item-start></ion-icon>Page3
+                </ion-item>
+
+                <ion-item-divider class="listaMenu" align="center">Conversor Brasil</ion-item-divider>
+                <ion-item menuClose="myMenu" (click)="homePage()">
+                    <ion-icon class="icone" name="briefcase" item-start></ion-icon>Page4
+                </ion-item>
+
+            </ion-list>
+        </ion-item-group>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

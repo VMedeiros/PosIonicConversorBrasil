@@ -1,21 +1,24 @@
-<ion-header>
-  <ion-toolbar transparent>
-    <ion-title>Conversor Brasil</ion-title>
-  </ion-toolbar>
+<ion-header transparent>
+    <ion-toolbar transparent>
+        <ion-title align="center">Bem-Vindo</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
-  <div class="img-center">
-    <img src="" class="loginImage" >
-    <div class="text-center">
-      <h1 style="text-align: center;">
-        <b> Login </b></h1><br>
-    </div>
-  </div>
-<button ion-button block (click)="login()">
-      <ion-icon name="home" item-start></ion-icon>
-        Entrar
-      </button>
-  
+    <ion-card>
+        <ion-card-content>
+            <img src="assets/img/logo.png" class="logoIcon"><br>
+            <h1 align="center"><b>Conversor Brasil</b></h1>
+        </ion-card-content>
+    </ion-card>
+
+    <p align="center">Autenticação Necessária</p>
+
+    <ion-row>
+        <ion-col>
+            <button ion-button block round clear class="button" (click)="login()">Entrar</button>
+        </ion-col>
+    </ion-row>
+
 </ion-content>
