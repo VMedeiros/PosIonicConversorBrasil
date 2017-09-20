@@ -1,20 +1,49 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, NavController, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
+import { SobrePage } from '../pages/sobre/sobre';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = HomePage;
+  [x: string]: any;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-    platform.ready().then(() => {
-      statusBar.styleDefault();
-      splashScreen.hide();
+  @ViewChild(Nav) nav: Nav;
+  
+    rootPage: any = LoginPage;
+  
+    pages: Array<{title: string, component: any}>;
+
+  
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen ) {
+    this.pages = [
+      { title: 'Conversor', component: HomePage },
+      { title: 'Sobre', component: SobrePage },
+      { title: 'Sair', component: LoginPage },
+    ]; 
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => {
+    this.statusBar.backgroundColorByHexString('#FFF111');
+    this.splashScreen.hide();
     });
+  }
+
+  homePage() {
+    this.nav.push(HomePage);
+  }
+
+  sobrePage() {
+    this.nav.push(SobrePage);
+  }
+
+  loginPage() {
+    this.nav.push(LoginPage);
   }
 }

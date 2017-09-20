@@ -16,6 +16,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { AgmCoreModule } from '@agm/core';
 import { HttpModule } from '@angular/http'
 import { LoginPage } from '../pages/login/login';
+import { SobrePage } from '../pages/sobre/sobre';
 
 // Initialize Firebase
 var config = {
@@ -31,7 +32,8 @@ var config = {
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    SobrePage
   ],
   imports: [
     BrowserModule,
@@ -48,15 +50,14 @@ var config = {
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    SobrePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
-
-
   ]
 })
 export class AppModule { }

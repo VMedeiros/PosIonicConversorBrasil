@@ -6,30 +6,37 @@
     </ion-header>
 
     <ion-content>
-        <ion-item-group>
-            <ion-list>
-                <ion-item-divider class="listaMenu" align="center">Conversor Brasil</ion-item-divider>
-                <ion-item menuClose="myMenu" (click)="homePage()">
-                    <ion-icon class="icone" name="briefcase" item-start></ion-icon>Page1
-                </ion-item>
 
-                <ion-item-divider class="listaMenu" align="center">Conversor Brasil</ion-item-divider>
-                <ion-item menuClose="myMenu" (click)="homePage()">
-                    <ion-icon class="icone" name="briefcase" item-start></ion-icon>Page2
-                </ion-item>
+        <ion-card>
+            <ion-card-content>
+                <img src="assets/img/logo.png" class="menuIcon2">
+                <p align="center" class="texto"><b>Conversor Brasil</b></p>
+            </ion-card-content>
+        </ion-card>
 
-                <ion-item-divider class="listaMenu" align="center">Conversor Brasil</ion-item-divider>
-                <ion-item menuClose="myMenu" (click)="homePage()">
-                    <ion-icon class="icone" name="briefcase" item-start></ion-icon>Page3
-                </ion-item>
+        <ion-card>
+            <ion-item-group>
+                <ion-list>
 
-                <ion-item-divider class="listaMenu" align="center">Conversor Brasil</ion-item-divider>
-                <ion-item menuClose="myMenu" (click)="homePage()">
-                    <ion-icon class="icone" name="briefcase" item-start></ion-icon>Page4
-                </ion-item>
+                    <ion-item-divider class="listaMenu" align="center"></ion-item-divider>
+                    <ion-item menuClose="myMenu" (click)="homePage()">
+                        <ion-icon class="icone" name="logo-usd" item-start></ion-icon>Converter
+                    </ion-item>
 
-            </ion-list>
-        </ion-item-group>
+                    <ion-item-divider class="listaMenu" align="center"></ion-item-divider>
+                    <ion-item menuClose="myMenu" (click)="sobrePage()">
+                        <ion-icon class="icone" name="information-circle" item-start></ion-icon>Sobre
+                    </ion-item>
+
+                    <ion-item-divider class="listaMenu" align="center"></ion-item-divider>
+                    <ion-item menuClose="myMenu" (click)="loginPage()">
+                        <ion-icon class="icone" name="log-out" item-start></ion-icon>Sair
+                    </ion-item>
+                    <ion-item-divider class="listaMenu" align="center"></ion-item-divider>
+
+                </ion-list>
+            </ion-item-group>
+        </ion-card>
     </ion-content>
 
 </ion-menu>
