@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { HomePage } from '../home/home';
 
@@ -10,11 +10,11 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public auth: AuthServiceProvider, public menuCtrl: MenuController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+  ionViewDidEnter() {
+    this.menuCtrl.swipeEnable(false, 'myMenu');
   }
   
   login() {

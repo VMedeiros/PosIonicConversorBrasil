@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 @Component({
@@ -17,13 +17,17 @@ export class HomePage {
   taxaEuro = 0;
   taxaLibra = 0;
 
-  constructor(public navCtrl: NavController, public auth: AuthServiceProvider) {
+  constructor(public navCtrl: NavController, public auth: AuthServiceProvider, public menuCtrl: MenuController) {
 
     auth.getCotacoes().then(cotacoes => {
       this.taxaDolar = cotacoes['USD'];
       this.taxaEuro = cotacoes['EUR'];
       this.taxaLibra = cotacoes['GBP'];
     });
+  }
+
+  ionViewDidEnter() {
+    this.menuCtrl.swipeEnable(true, 'myMenu');
   }
 
   converter() {
