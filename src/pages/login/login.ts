@@ -18,7 +18,7 @@ export class LoginPage {
   }
   
   login() {
-    this.auth.entrarComFacebook();
+    // this.auth.entrarComFacebook();
     this.navCtrl.push(HomePage);
   }
 

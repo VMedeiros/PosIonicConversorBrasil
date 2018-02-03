@@ -4,6 +4,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -17,6 +18,8 @@ import { AgmCoreModule } from '@agm/core';
 import { HttpModule } from '@angular/http'
 import { LoginPage } from '../pages/login/login';
 import { SobrePage } from '../pages/sobre/sobre';
+import {MapPage} from "../pages/map/map";
+import { MapsServiceProvider } from '../providers/maps-service/maps-service';
 
 // Initialize Firebase
 var config = {
@@ -33,7 +36,8 @@ var config = {
     MyApp,
     HomePage,
     LoginPage,
-    SobrePage
+    SobrePage,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -51,13 +55,16 @@ var config = {
     MyApp,
     HomePage,
     LoginPage,
-    SobrePage
+    SobrePage,
+    MapPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+      Geolocation,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
+    MapsServiceProvider,
   ]
 })
-export class AppModule { }
+export class AppModule {}
